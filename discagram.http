@@ -1,0 +1,6 @@
+@discagram_HostAddress = http://localhost:5188
+
+GET {{discagram_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

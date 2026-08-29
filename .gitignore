@@ -1,0 +1,24 @@
+# Build artifacts (.NET) — sempre regeneráveis via dotnet build/restore
+bin/
+obj/
+*.user
+
+# IDE (Visual Studio / VS Code / Rider)
+.vs/
+.vscode/
+*.suo
+*.userosscache
+*.sln.docstates
+.idea/
+
+# Segredos locais (dotnet user-secrets vive fora do repo por padrão, nada a ignorar aqui,
+# mas se você optar por colocar connection string com senha em appsettings.Development.json,
+# descomente a linha abaixo em vez de commitar o segredo)
+# appsettings.Development.json
+
+# Logs
+*.log
+
+# OS
+Thumbs.db
+.DS_Store
