@@ -2,6 +2,6 @@
 
 public interface IPasswordHash
 {
-    (byte[] Hash, byte[] Salt) HashPassword(string password);
-    bool VerifyPasswordHash(string password, byte[] storedHash, byte[] storedSalt);
+    string HashPassword(string password);
+    bool VerifyPasswordHash(string password,string storedHash);
 }

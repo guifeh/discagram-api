@@ -24,3 +24,9 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+var newCriptography = new Criptography();
+
+var hash = newCriptography.HashPassword("minhaSenha123");
+Console.WriteLine(newCriptography.VerifyPasswordHash("minhaSenha123", hash));
+Console.WriteLine(newCriptography.VerifyPasswordHash("senhaErrada", hash));
