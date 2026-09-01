@@ -2,7 +2,7 @@
 
 public class User
 {
-    public Guid Id { get; set; }
+    public Guid Id { get; set; } = Guid.NewGuid();
 
     required public string Name { get; set; }
 
@@ -14,9 +14,11 @@ public class User
 
     public string? Phone { get; set; }
 
-    public byte[] PasswordHash { get; set; } = Array.Empty<byte>();
-    public byte[] PasswordSalt { get; set; } = Array.Empty<byte>();
+    required public string PasswordHash { get; set; } 
 
+    Index UserIndex { get; set; }
+    Index EmailIndex { get; set; }
+    Index UserNameIndex { get; set; }
     public User() { }
 
 }

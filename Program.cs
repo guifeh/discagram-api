@@ -1,4 +1,5 @@
 using discagram.Entities;
+using discagram.Infraestructure.Context;
 using discagram.Security;
 using discagram.Services.Interfaces;
 using Microsoft.AspNetCore.Identity;
@@ -9,6 +10,7 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddScoped<IPasswordHash, Criptography>();
+builder.Services.AddDbContext<AppDbContext>();
 
 var app = builder.Build();
 
@@ -24,9 +26,3 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
-
-var newCriptography = new Criptography();
-
-var hash = newCriptography.HashPassword("minhaSenha123");
-Console.WriteLine(newCriptography.VerifyPasswordHash("minhaSenha123", hash));
-Console.WriteLine(newCriptography.VerifyPasswordHash("senhaErrada", hash));
